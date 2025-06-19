@@ -36,16 +36,16 @@ function operate(operation, num1, num2) {
 function operateOnObj() {
     switch (calculatorObj.operation) {
         case "+":
-            calculatorObj.num1 = operate(add, Number(calculatorObj.num1), Number(calculatorObj.num2));
+            calculatorObj.num1 = operate(add, Number(calculatorObj.num1), Number(calculatorObj.num2)).toString();
             break;
         case "-":
-            calculatorObj.num1 = operate(subtract, Number(calculatorObj.num1), Number(calculatorObj.num2));
+            calculatorObj.num1 = operate(subtract, Number(calculatorObj.num1), Number(calculatorObj.num2)).toString();
             break;
         case "*":
-            calculatorObj.num1 = operate(multiply, Number(calculatorObj.num1), Number(calculatorObj.num2));
+            calculatorObj.num1 = (Math.round(operate(multiply, Number(calculatorObj.num1), Number(calculatorObj.num2)) * 1000) / 1000).toString();
             break;
         case "/":
-            calculatorObj.num1 = operate(divide, Number(calculatorObj.num1), Number(calculatorObj.num2));
+            calculatorObj.num1 = (Math.round(operate(divide, Number(calculatorObj.num1), Number(calculatorObj.num2)) * 1000) / 1000).toString();
             break;
     }
     calculatorObj.num2 = "";
