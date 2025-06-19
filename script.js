@@ -66,9 +66,14 @@ function handleInput(input, type) {
             }
             break;
         case "operation":
-            if ((input === "=") && (calculatorObj.num1 !== "") && (calculatorObj.num2 != "") && (calculatorObj.operation !== "")) {
+            if (calculatorObj.num1 === "") {
+                break;
+            }
+            if (input === "=") {
                 // perform operation function if valid inputs are given
-                operateOnObj();
+                if ((calculatorObj.num1 !== "") && (calculatorObj.num2 != "") && (calculatorObj.operation !== "")) {
+                    operateOnObj();
+                }
             }
             else {
                 if ((calculatorObj.operation !== "") && (calculatorObj.num2 !== "")) {
